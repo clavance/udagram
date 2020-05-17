@@ -11,6 +11,9 @@ From terminal, run
 npm i
 ```
 
+### Configuring variables
+Update `~/.profile` or `~/.bash_profile` with relevant environment variables for AWS as per `/src/config/config.ts` file, then in terminal run `source ~/.profile` or `source ~/.bash_profile`.
+
 ### Installing useful tools
 #### 1. [Postbird](https://github.com/paxa/postbird)
 Postbird is a useful client GUI (graphical user interface) to interact with our provisioned Postgres database. We can establish a remote connection and complete actions like viewing data and changing schema (tables, columns, ect).
