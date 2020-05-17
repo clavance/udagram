@@ -1,12 +1,10 @@
 import { Router, Request, Response } from 'express';
-
 import { User } from '../models/User';
-
 import * as bcrypt from 'bcrypt';
 import * as jwt from 'jsonwebtoken';
 import { NextFunction } from 'connect';
-
 import * as EmailValidator from 'email-validator';
+import { config } from '../../../../config/config';
 
 const router: Router = Router();
 
@@ -33,6 +31,8 @@ async function comparePasswords(plainTextPassword: string, hash: string): Promis
 
 function generateJWT(user: User): string {
     //@TODO Use jwt to create a new JWT Payload containing
+    // set the JWT token in the config file, it should be secret
+    return jwt.sign(user, config.jwt_secret);
 }
 
 export function requireAuth(req: Request, res: Response, next: NextFunction) {
