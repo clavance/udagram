@@ -12,10 +12,22 @@ const router: Router = Router();
 
 async function generatePassword(plainTextPassword: string): Promise<string> {
     //@TODO Use Bcrypt to Generated Salted Hashed Passwords
+    const saltRounds = 10;
+    await bcrypt.hash(plainTextPassword, salt, (err, hash) => {
+      // check for errors
+      if (err) {
+        console.log("error generating password: ", err);
+      }
+      // store hash in password database?
+      return hash;
+    });
 }
 
 async function comparePasswords(plainTextPassword: string, hash: string): Promise<boolean> {
     //@TODO Use Bcrypt to Compare your password to your Salted Hashed Password
+    await bcrypt.compare(plainTextPassword, hash, (err, result) => {
+      return result; //true if equal, else false
+    })
 }
 
 function generateJWT(user: User): string {
@@ -27,13 +39,13 @@ export function requireAuth(req: Request, res: Response, next: NextFunction) {
     // if (!req.headers || !req.headers.authorization){
     //     return res.status(401).send({ message: 'No authorization headers.' });
     // }
-    
+
 
     // const token_bearer = req.headers.authorization.split(' ');
     // if(token_bearer.length != 2){
     //     return res.status(401).send({ message: 'Malformed token.' });
     // }
-    
+
     // const token = token_bearer[1];
 
     // return jwt.verify(token, "hello", (err, decoded) => {
@@ -44,8 +56,8 @@ export function requireAuth(req: Request, res: Response, next: NextFunction) {
     // });
 }
 
-router.get('/verification', 
-    requireAuth, 
+router.get('/verification',
+    requireAuth,
     async (req: Request, res: Response) => {
         return res.status(200).send({ auth: true, message: 'Authenticated.' });
 });
@@ -82,7 +94,7 @@ router.post('/login', async (req: Request, res: Response) => {
     res.status(200).send({ auth: true, token: jwt, user: user.short()});
 });
 
-//register a new user
+//register a new user (/api/v0/users/auth/)
 router.post('/', async (req: Request, res: Response) => {
     const email = req.body.email;
     const plainTextPassword = req.body.password;
