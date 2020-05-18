@@ -1,18 +1,24 @@
 # Udagram REST API
 
-Back end for Udagram REST API. See Udagram repo.
+Udagram is a simple cloud application developed alongside the Udacity Cloud Engineering Nanodegree. It allows users to register and log into a web client, post photos to the feed, and process photos using an image filtering microservice.
+
+The project is split into three parts:
+1. [The Simple Frontend](https://github.com/udacity/cloud-developer/tree/master/course-02/exercises/udacity-c2-frontend)
+A basic Ionic client web application which consumes the RestAPI Backend. 
+2. [The RestAPI Backend](https://github.com/udacity/cloud-developer/tree/master/course-02/exercises/udacity-c2-restapi), a Node-Express server which can be deployed to a cloud service.
+3. [The Image Filtering Microservice](https://github.com/udacity/cloud-developer/tree/master/course-02/project/image-filter-starter-code), the final project for the course. It is a Node-Express application which runs a simple script to process images.
+
 
 ***
+## Getting Setup
 
-### Dependencies
+### Installing project dependencies
 
-From terminal, run
+This project uses NPM to manage software dependencies. NPM Relies on the package.json file located in the root of this repository. After cloning, open your terminal and run:
 ```bash
-npm i
+npm install
 ```
-
-### Configuring variables
-Update `~/.profile` or `~/.bash_profile` with relevant environment variables for AWS as per `/src/config/config.ts` file, then in terminal run `source ~/.profile` or `source ~/.bash_profile`.
+>_tip_: **npm i** is shorthand for **npm install**
 
 ### Installing useful tools
 #### 1. [Postbird](https://github.com/paxa/postbird)
