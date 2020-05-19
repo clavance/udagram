@@ -1,0 +1,4 @@
++ rxjs@5.5.12
+updated 1 package and audited 1244 packages in 5.711s
+found 3030 vulnerabilities (2256 low, 5 moderate, 769 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
