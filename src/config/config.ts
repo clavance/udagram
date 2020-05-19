@@ -5,9 +5,10 @@ export const config = {
     "database": process.env.AWS_PGDATABASE,
     "host": process.env.AWS_PGHOST,
     "dialect": "postgres",
-    "aws_region": "us-east-1",
+    "aws_region": process.env.AWS_REGION,
     "aws_profile": "default",
-    "aws_media_bucket": process.env.AWS_MEDIA_BUCKET
+    "aws_media_bucket": process.env.AWS_MEDIA_BUCKET,
+    "jwt_secret": "hello"
   },
   "prod": {
     "username": "",

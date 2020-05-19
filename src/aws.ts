@@ -3,18 +3,10 @@ import { config } from './config/config';
 
 const c = config.dev;
 
-// Configure AWS credentials.
-// we should have locally stored IAM credentials in the 'default' profile
-var credentials = new AWS.SharedIniFileCredentials({profile: c.aws_profile});
+//Configure AWS
+var credentials = new AWS.SharedIniFileCredentials({profile: 'default'});
 AWS.config.credentials = credentials;
 
-//ADD THIS FOR ELASTIC BEANSTALK DEPLOYMENT?
-// if(c.aws_profile !== "DEPLOYED") {
-//   var credentials = new AWS.SharedIniFileCredentials({profile: 'default'});
-//   AWS.config.credentials = credentials;
-// }
-
-// instantiate a new AWS S3 interface, telling it some info
 export const s3 = new AWS.S3({
   signatureVersion: 'v4',
   region: c.aws_region,
