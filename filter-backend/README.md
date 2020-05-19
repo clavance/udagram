@@ -13,6 +13,6 @@ The service should return a filtered version of the original image.
 
 ### AWS Elastic Beanstalk
 
-This microservice is hosted using AWS Elastic Beanstalk, at [this endpoint](http://image-filter-dev22.us-east-1.elasticbeanstalk.com/). Call it with the same steps as above, eg: to obtain a filtered version of [this image](https://s3.cointelegraph.com/storage/uploads/view/bad02e8b57a64d349aa5eec318298b4b.png), we would use [this link](http://image-filter-dev22.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://s3.cointelegraph.com/storage/uploads/view/bad02e8b57a64d349aa5eec318298b4b.png).
+This microservice is hosted using AWS Elastic Beanstalk, at [this endpoint](http://image-filter-dev22.us-east-1.elasticbeanstalk.com/)(http://image-filter-dev22.us-east-1.elasticbeanstalk.com/). Call it with the same steps as above, eg: to obtain a filtered version of [this image](https://s3.cointelegraph.com/storage/uploads/view/bad02e8b57a64d349aa5eec318298b4b.png), we would use [this link](http://image-filter-dev22.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://s3.cointelegraph.com/storage/uploads/view/bad02e8b57a64d349aa5eec318298b4b.png).
 
 
